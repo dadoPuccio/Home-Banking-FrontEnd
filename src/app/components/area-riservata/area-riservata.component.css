@@ -1,0 +1,62 @@
+.main-content{
+    margin: auto;
+}
+
+.thin-border {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 98%;
+    display: block;
+    margin: auto;
+}
+
+h1 {
+    padding-left: 30px;
+}
+
+h3 {
+    padding-left: 10px;
+}
+
+.session-button-text{
+    padding-right: 10px;
+}
+
+.area-riservata {
+    overflow: hidden;
+  }
+  
+
+.left {
+    float: left;
+}
+
+
+/* Right-aligned link */
+.right {
+    margin-top: 24px;
+    float: right;
+}
+
+
+.transfer-container {
+    padding-top: 30px;
+    padding-bottom: 10px;
+
+    text-align: center;
+}
+
+.transfer-data {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.data-box{
+    margin:0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.no-margin{
+    margin: 0px;
+    padding-bottom: 10px;
+}

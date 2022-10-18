@@ -1,0 +1,57 @@
+<app-header-area-riservata></app-header-area-riservata>
+<div class="clr-col-lg-8 clr-col-md-10 clr-col-12 main-content">
+
+    <div class="thin-border area-riservata">
+        <div class="left">
+            <h1>Area Riservata</h1>
+        </div>
+        
+        <button type="button" class="btn btn-icon right" aria-label="home" (click)="openSessionTransferModal()">
+            <span class="session-button-text">Trasferisci Sessione</span>
+            <clr-icon shape="switch"></clr-icon>
+        </button>
+        
+    </div>
+    
+    <h3>I Miei Conti</h3>
+    <div class="clr-row">
+        <div class="clr-col-lg-4 clr-col-md-8 clr-col-12" *ngFor="let account of accounts">
+            <div  class="card">
+                <h3 class="card-header">Conto {{account.id}}</h3>
+                <div class="card-block">
+                    <h4 class="card-title">{{account.type}}</h4>
+                    <div class="card-text">
+                        <ul class="list-unstyled">
+                            <li>IBAN: {{account.iban}}</li> 
+                            <li>Saldo: {{account.balance}}€ </li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-sm btn-link">Gestisci</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <clr-modal #sessionTransfer [(clrModalOpen)]="openTransfer" [clrModalSize]="'lg'">
+        <h3 class="modal-title">Trasferimento Sessione</h3>
+    <div class="modal-body">
+        <p>Questa utilità ti permette di trasferire la sessione corrente su un altro device. 
+        Richiedi un codice di trasferimento ed inseriscilo nell'altro device nella schermata di login.
+        </p>
+        <div class="transfer-container clr-col-sm-6 clr-offset-sm-3">
+            <button *ngIf="sessionTransferCode==undefined" type="button" class="btn" (click)="requestSessionTransfer()">Richiedi codice di Trasferimento</button>
+            <span *ngIf="sessionTransferCode!=undefined">
+                <p class="no-margin">Codice di sessione: </p>
+                <div class="transfer-data">   
+                    <h3 class="data-box">{{sessionTransferCode}}</h3>
+                    <qrcode [qrdata]="sessionTransferCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+                </div>
+            </span>
+        </div>
+    </div>
+    </clr-modal>
+
+</div>

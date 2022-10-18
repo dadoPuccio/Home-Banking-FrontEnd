@@ -1,0 +1,66 @@
+<div class="login-wrapper">
+    <form class="login" (ngSubmit)="submitCredentials()">
+        <section class="title">
+            <h3 class="welcome">Area Riservata</h3>
+            PSB Home Banking
+            <h5 class="hint">Inserisci le tue credenziali per accedere</h5>
+        </section>
+        <div class="login-group">
+    		<clr-input-container>
+                <label class="clr-sr-only">Username</label>
+                <input type="text" name="email" clrInput placeholder="Email"  [formControl]="email"/>
+            </clr-input-container>
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input type="password" name="password" clrPassword placeholder="Password" [formControl]="password"/>
+            </clr-password-container>
+        
+            <button id="btn-login" type="submit" class="btn btn-primary">ACCEDI</button>
+
+            <button class="btn" (click)="showTransferDialog=true">ACCESSO CON TRAFERIMENTO DI SESSIONE</button>
+        </div>
+    </form>
+</div>
+
+<form (ngSubmit)="submitOTP()">
+    <clr-modal #OTPModal [(clrModalOpen)]="showOTPDialog" [clrModalSize]="'lg'">
+        
+        <h3 class="modal-title">Autenticazione a due fattori richiesta</h3>
+        
+        <div class="modal-body">
+            <div class="form-group ">
+            <p>Abbiamo inviato alla tua email un codice OTP per accedere alla tua area personale.</p>
+            <clr-input-container>
+                <label class="clr-sr-only">OTP</label>
+                <input type="text" name="otp" clrInput placeholder="OTP"  [formControl]="otp"/>
+            </clr-input-container>
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Accedi</button>
+        </div>
+        
+    </clr-modal>
+</form>
+
+
+<form (ngSubmit)="submitTransferCode()">
+    <clr-modal #OTPModal [(clrModalOpen)]="showTransferDialog" [clrModalSize]="'lg'">
+
+        <h3 class="modal-title">Accesso con Trasferimento Sessione</h3>
+        
+        <div class="modal-body">
+            <div class="form-group ">
+            <p>Inserisci un codice di sessione valido:</p>
+            <clr-input-container>
+                <label class="clr-sr-only">Codice di Sessione</label>
+                <input type="text" name="sessionCode" clrInput placeholder="Codice di Sessione"  [formControl]="sessionCode"/>
+            </clr-input-container>
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Accedi</button>
+        </div>
+        
+    </clr-modal>
+</form>
