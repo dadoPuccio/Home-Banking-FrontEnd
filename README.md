@@ -13,24 +13,45 @@ Sono state implementate 3 viste nell’applicazione, navigabili grazie al modulo
 
  - `home`: pagina principale dell’applicazione
 
- <img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/home.png" width="600px"/>
-
+    <p align="center">
+      <img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/home.png" width="600px"/>
+    </p>
+    <br/>
 
  - `login`: pagina in cui è possibile procedere all'autenticazione, tramite verifica a due fattori oppure tramite codice di trasferimento di sessione
 
-<img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/login.png" width="600px"/>
-
+    <p align="center">
+      <img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/login.png" width="600px"/>
+    </p>
+    <br/>
 
  - `reserved-area`: pagina in cui il cliente autenticare può visionare i suoi conti bancari e sfruttare la funzionalità di trasferimento sessione
 
-<img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/reserved-area.png" width="600px"/>
-
+    <p align="center">
+      <img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/reserved-area.png" width="600px"/>
+    </p>
+    <br/>
 
 L’applicazione dialoga con il backend (istanziato localmente su un server WildFly) facendo uso del modulo `HttpClient` di Angular. Sono state implementate le funzionalità di login e logout, assieme a quella di trasferimento sessione.  
 Dal momento che il backend richiede all’utente autenticato di trasmettere le sue credenziali (coppia <e-mail - OTP>) ad ogni successiva richiesta, queste vengono memorizzate temporaneamente lato frontend nel Local Storage offerto da Angular.
 
 ## Interazioni Principali
+Sono mostrate di seguito le interazioni che l'utente deve effettuare al momento del login, del logout e del trasferimento sessione:
 
+- **Login e Logout**
+    <p align="center">
+      <img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/login-logout.gif" width="600px"/>
+    </p>
+    L'OTP nell'esempio non viene mandato via mail, ma viene printato sulla Console del server WildFly in cui il Backend è in esecuzione
+    <br/>
+
+- **Trasferimento Sessione**
+    <p align="center">
+      <img src="https://github.com/dadoPuccio/home_banking_frontend/blob/main/images/transfer-session.gif" width="600px"/>
+    </p>
+    La generazione del QR Code viene effettuata grazie alla libreria [angularx-qrcode](https://www.npmjs.com/package/angularx-qrcode) direttamente nel frontend. Il QR codifica il codice di sessione generato dal backend.
+    <br/>
+  
   
 ## Eseguire il Codice
 
